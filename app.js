@@ -1,9 +1,21 @@
-const books = document.querySelectorAll('#book-list li .name');
+const bookList = document.querySelector('#book-list');
 
-Array.from(books).forEach(function(book){
-  book.textContent += ' (Book title)';
+console.log('book list parent element:', bookList.parentElement);
+console.log('book list parent node:', bookList.parentNode);
+
+console.log('all node children:');
+Array.from(bookList.childNodes).forEach(function(node){
+  console.log(node);
 });
 
-const bookList = document.querySelector('#book-list');
-bookList.innerHTML = '<h2>Books and more books...</h2>';
-bookList.innerHTML += '<p>This is how you add HTML content</p>';
+console.log('all element children:');
+Array.from(bookList.children).forEach(function(node){
+  console.log(node);
+});
+
+const titles = bookList.querySelectorAll('.name');
+
+console.log('Book titles:');
+Array.from(titles).forEach(function(title){
+  console.log(title.textContent);
+});
